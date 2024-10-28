@@ -72,7 +72,7 @@ reboot_dev()
 
 format_flash()
 {
-	local wd_timeout="5000"
+	local wd_timeout="50000"
 
 	local cmd="import machine as m, flashbdev as f, uos as u;"
 	cmd="${cmd}m.WDT(0,${wd_timeout}).feed();"
@@ -105,6 +105,7 @@ transfer_to_device()
 	reboot_dev
 	sleep 2
 	for f in "$builddir"/*; do
+		echo "=== transferring to device $f  ==="
 		transfer "$f" :/"$(basename $f)"
 	done
 	reboot_dev

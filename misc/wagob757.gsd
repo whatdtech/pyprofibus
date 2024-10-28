@@ -1,0 +1,1565 @@
+;============================================================================
+;    Device description file according to DIN 19245 Part 3 (PROFIBUS-DP)
+;============================================================================
+;
+; FILENAME                 : WAGOB757.GSE
+;----------------------------------------------------------------------------
+; DEVICENAME               : ECO-Fieldbuscoupler PROFIBUS-DP 12MBaud
+;----------------------------------------------------------------------------
+; DEVICE FAMILY            : WAGO->I/O->SYSTEM 750
+;----------------------------------------------------------------------------
+; PROTOCOL                 : PROFIBUS-DP (Slave)
+;----------------------------------------------------------------------------
+; VENDOR                   : WAGO Kontakttechnik GmbH
+;                            Hansastrasse 27
+;                            D-32423 Minden/Westf.
+;                            Germany
+;                            Phone: +49 (0) 571 / 887-0
+;                            Fax  : +49 (0) 571 / 887-169
+;----------------------------------------------------------------------------
+; ORDER NUMBER             : 750-343 (/...-...)
+;----------------------------------------------------------------------------
+; CONTACT                  : Mr. Detlef Brand
+;                            Phone: +49 (0) 571 / 887-473
+;                            Fax  : +49 (0) 571 / 887-8473
+;----------------------------------------------------------------------------
+; FILE VERSION             : 1.00
+;----------------------------------------------------------------------------
+; DATE                     : 2002-03-01
+;----------------------------------------------------------------------------
+; MODIFICATIONS :
+; DATE         AUTHOR   VERSION   DESCRIPTION:
+; 2002-03-01   Bra      1.00       1st Release
+;
+;
+;----------------------------------------------------------------------------
+; REMARKS         :
+;
+;============================================================================
+#Profibus_DP
+PrmText = 1
+Text(0) = "10 ms"
+Text(1) = "1 ms"
+EndPrmText
+PrmText = 3
+Text(0) = "POWER ON RESET"
+Text(1) = "AUTORESET"
+EndPrmText
+PrmText = 4
+Text(0) = "disabled"
+Text(1) = "enabled"
+EndPrmText
+PrmText = 5
+Text(0) = "MOTOROLA (MSB-LSB)"
+Text(1) = "INTEL (LSB-MSB)"
+EndPrmText
+PrmText = 6
+Text(0) = "Terminalbus stops transmission"
+Text(1) = "Output image is cleared"
+Text(2) = "Output image is stored"
+Text(3) = "Substitude Values are switched"
+EndPrmText
+PrmText = 7
+Text(0) = "PROFIBUS communication stops"
+Text(1) = "Input image is cleared"
+Text(2) = "Input image is stored"
+EndPrmText
+PrmText = 10
+Text(0) = "not plugged"
+Text(1) = "plugged"
+EndPrmText
+ExtUserPrmData = 1 "DP-Watchdog-Base"
+Bit(2) 0 0-1
+Prm_Text_Ref = 1
+EndExtUserPrmData
+ExtUserPrmData = 3 "Restart on K-Bus Failure"
+Bit(0) 0 0-1
+Prm_Text_Ref = 3
+EndExtUserPrmData
+ExtUserPrmData = 4 "Device Diagnosis"
+Bit(1) 1 0-1
+Prm_Text_Ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 5 "Process Data Representation"
+Bit(3) 0 0-1
+Prm_Text_Ref = 5
+EndExtUserPrmData
+ExtUserPrmData = 6 "Response to PROFIBUS DP Failure"
+BitArea(0-2) 3 0-3
+Prm_Text_Ref = 6
+EndExtUserPrmData
+ExtUserPrmData = 7 "Response to K-Bus Failure"
+BitArea(3-5) 0 0-2
+Prm_Text_Ref = 7
+EndExtUserPrmData
+ExtUserPrmData = 10 "Terminal is physically"
+Bit(5) 1 0-1
+Prm_Text_Ref = 10
+EndExtUserPrmData
+ExtUserPrmData = 12 "Ord.-No.-Offset 750-(4??-450)"
+BitArea(0-5) 0 0-63
+EndExtUserPrmData
+ExtUserPrmData = 13 "Ord.-No.-Offset 750-(5??-550)"
+BitArea(0-5) 0 0-63
+EndExtUserPrmData
+ExtUserPrmData = 14 "Ord.-No.-Offset 750-(6??-630)"
+BitArea(0-5) 0 0-63
+EndExtUserPrmData
+ExtUserPrmData = 20 "Diagnosis Channel 1"
+Bit(2) 0 0-1
+Prm_Text_Ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 21 "Diagnosis Channel 2"
+Bit(3) 0 0-1
+Prm_Text_Ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 22 "Diagnosis Channel 3"
+Bit(0) 0 0-1
+Prm_Text_Ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 23 "Diagnosis Channel 4"
+Bit(1) 0 0-1
+Prm_Text_Ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 24 "Substitude Value Channel 1"
+Bit(0) 0 0-1
+EndExtUserPrmData
+ExtUserPrmData = 25 "Substitude Value Channel 2"
+Bit(1) 0 0-1
+EndExtUserPrmData
+ExtUserPrmData = 26 "Substitude Value Channel 3"
+Bit(2) 0 0-1
+EndExtUserPrmData
+ExtUserPrmData = 27 "Substitude Value Channel 4"
+Bit(3) 0 0-1
+EndExtUserPrmData
+ExtUserPrmData = 28 "Substitude Value Channel 5"
+Bit(4) 0 0-1
+EndExtUserPrmData
+ExtUserPrmData = 29 "Substitude Value Channel 6"
+Bit(5) 0 0-1
+EndExtUserPrmData
+ExtUserPrmData = 30 "Substitude Value Channel 7"
+Bit(6) 0 0-1
+EndExtUserPrmData
+ExtUserPrmData = 31 "Substitude Value Channel 8"
+Bit(7) 0 0-1
+EndExtUserPrmData
+ExtUserPrmData = 32 "Substitude Value Channel 1"
+Unsigned16 0 0-32767
+EndExtUserPrmData
+ExtUserPrmData = 33 "Substitude Value Channel 2"
+Unsigned16 0 0-32767
+EndExtUserPrmData
+ExtUserPrmData = 34 "Substitude Value Channel 3"
+Unsigned16 0 0-32767
+EndExtUserPrmData
+ExtUserPrmData = 35 "Substitude Value Channel 4"
+Unsigned16 0 0-32767
+EndExtUserPrmData
+ExtUserPrmData = 36 "Substitude Value Channel 1"
+Unsigned16 0 0-65535
+EndExtUserPrmData
+ExtUserPrmData = 37 "Substitude Value Channel 2"
+Unsigned16 0 0-65535
+EndExtUserPrmData
+ExtUserPrmData = 38 "Substitude Value Channel 3"
+Unsigned16 0 0-65535
+EndExtUserPrmData
+ExtUserPrmData = 39 "Substitude Value Channel 4"
+Unsigned16 0 0-65535
+EndExtUserPrmData
+ExtUserPrmData = 40 "Diagnosis Field Voltage Fail"
+Bit(2) 0 0-1
+Prm_Text_Ref = 4
+EndExtUserPrmData
+ExtUserPrmData = 41 "Diagnosis Fuse blown"
+Bit(3) 0 0-1
+Prm_Text_Ref = 4
+EndExtUserPrmData
+GSD_Revision                         = 3
+Vendor_Name                          = "WAGO Kontakttechnik GmbH"
+Model_Name                           = "WAGO 750-343"
+Revision                             = "1.00"
+Ident_Number                         = 0xB757
+Protocol_Ident                       = 0
+Station_Type                         = 0
+FMS_supp                             = 0
+Hardware_Release                     = "HW 01"
+Software_Release                     = "SW 01"
+9.6_supp                             = 1
+19.2_supp                            = 1
+93.75_supp                           = 1
+187.5_supp                           = 1
+500_supp                             = 1
+1.5M_supp                            = 1
+3M_supp                              = 1
+6M_supp                              = 1
+12M_supp                             = 1
+MaxTsdr_9.6                          = 60
+MaxTsdr_19.2                         = 60
+MaxTsdr_93.75                        = 60
+MaxTsdr_187.5                        = 60
+MaxTsdr_500                          = 100
+MaxTsdr_1.5M                         = 150
+MaxTsdr_3M                           = 250
+MaxTsdr_6M                           = 350
+MaxTsdr_12M                          = 550
+Redundancy                           = 0
+Repeater_Ctrl_Sig                    = 0
+24V_Pins                             = 0
+Implementation_Type                  = "SPC3-ASIC"
+Bitmap_Device                        = "buskopgn"
+Bitmap_Diag                          = "buskopgs"
+Bitmap_SF                            = "buskopgs"
+Freeze_Mode_supp                     = 1
+Sync_Mode_supp                       = 1
+Auto_Baud_supp                       = 1
+Set_Slave_Add_supp                   = 0
+User_Prm_Data_Len                    = 19
+User_Prm_Data                        = 0x00 , 0x00 , 0x00 , \
+                                       0x00 , 0x00 ,        \
+                                       0x00 , 0x00 ,        \
+                                       0x00 , 0x00 ,        \
+                                       0xC3 , 0x43 ,        \
+                                       0x00 , 0x00 ,        \
+                                       0x00 , 0x01 ,        \
+                                       0x00 , 0x00 ,        \
+                                       0x00 , 0x00           
+Min_Slave_Intervall                  = 1
+Modular_Station                      = 1
+Max_Module                           = 64
+Max_Input_Len                        = 32
+Max_Output_Len                       = 32
+Max_Data_Len                         = 64
+Fail_Safe                            = 1
+Max_Diag_Data_Len                    = 64
+Modul_Offset                         = 1
+Max_User_Prm_Data_Len                = 237
+Slave_Family                         = 3@WAGO-IO-SYSTEM 750
+Channel_Diag(16) = "Parameterization Fault"
+Channel_Diag(17) = "Field Voltage is missing"
+Channel_Diag(18) = "Fuse blown"
+Channel_Diag(19) = "Buffer-Overrun"
+Channel_Diag(26) = "SSI-Input faulty"
+Channel_Diag(27) = "SSI-FRAME faulty"
+Channel_Diag(20) = "Checksum faulty"
+Channel_Diag(21) = "Parity Fault"
+Channel_Diag(22) = "Partner Receive Timeout"
+Channel_Diag(23) = "Receive Timeout"
+Ext_User_Prm_Data_Const(0)  = 0x00 , 0x00 , 0x00 
+Ext_User_Prm_Data_Const(3)  = 0x00 , 0x00     
+Ext_User_Prm_Data_Const(5)  = 0x00 , 0x00
+Ext_User_Prm_Data_Const(7)  = 0x02 , 0x00
+Ext_User_Prm_Data_Const(9)  = 0xC3 , 0x43
+Ext_User_Prm_Data_Const(11) = 0x00 , 0x00
+Ext_User_Prm_Data_Const(13) = 0x00 , 0x01
+Ext_User_Prm_Data_Const(15) = 0x00 , 0x00
+Ext_User_Prm_Data_Const(17) = 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0)  = 1
+Ext_User_Prm_Data_Ref(7)  = 3
+Ext_User_Prm_Data_Ref(7)  = 4
+Ext_User_Prm_Data_Ref(9)  = 5
+Ext_User_Prm_Data_Ref(10) = 6
+Ext_User_Prm_Data_Ref(10) = 7
+Module = "WAGO NETCON Dummy" 0x00
+1
+Ext_Module_Prm_Data_Len = 0
+EndModule
+Module = "750-343 No PI Channel" 0x00
+2
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x80 , 0x2B , 0x00
+EndModule
+Module = "750-343 2 Byte PI Channel" 0xB1
+3
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x82 , 0x2B , 0x00
+EndModule
+Module = "750-400  2 DI/24 V DC/3.0 ms" 0x10
+4
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-400  2 DI/24 V DC/3.0 ms" 0x00
+5
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-401  2 DI/24 V DC/0.2 ms" 0x10
+6
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-401  2 DI/24 V DC/0.2 ms" 0x00
+7
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-402  4 DI/24 V DC/3.0 ms" 0x10
+8
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-402  4 DI/24 V DC/3.0 ms" 0x00
+9
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-403  4 DI/24 V DC/0.2 ms" 0x10
+10
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-403  4 DI/24 V DC/0.2 ms" 0x00
+11
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-404  U/D-Counter" 0xF2
+12
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x76 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-405  2 DI/230 V AC/10 ms" 0x10
+13
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-405  2 DI/230 V AC/10 ms" 0x00
+14
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-406  2 DI/120 V AC/10 ms" 0x10
+15
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-406  2 DI/120 V AC/10 ms" 0x00
+16
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-407  2 DI/230 V AC/10 ms" 0x10
+17
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-407  2 DI/230 V AC/10 ms" 0x00
+18
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-408  4 DI/24 V DC/3.0 ms" 0x10
+19
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-408  4 DI/24 V DC/3.0 ms" 0x00
+20
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-409  4 DI/24 V DC/0.2 ms" 0x10
+21
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-409  4 DI/24 V DC/0.2 ms" 0x00
+22
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-410  2 DI/24 V DC/3.0 ms" 0x10
+23
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-410  2 DI/24 V DC/3.0 ms" 0x00
+24
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-411  2 DI/24 V DC/0.2 ms" 0x10
+25
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-411  2 DI/24 V DC/0.2 ms" 0x00
+26
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-412  2 DI/48 V DC/3.0 ms" 0x10
+27
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-412  2 DI/48 V DC/3.0 ms" 0x00
+28
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-413  2 DI/48 V DC/0.2 ms" 0x10
+29
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-413  2 DI/48 V DC/0.2 ms" 0x00
+30
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-414  4 DI/5 V DC/0.2 ms" 0x10
+31
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-414  4 DI/5 V DC/0.2 ms" 0x00
+32
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-415 4 DI/24 V AC/DC/20 ms" 0x10
+33
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-415 4 DI/24 V AC/DC/20 ms" 0x00
+34
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-416 2 DI/120-230 V AC" 0x10
+35
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-416 2 DI/120-230 V AC" 0x00
+36
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-418 2 DI/24 V DC DIA ACK" 0x30
+37
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x07 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "*750-418 2 DI/24 V DC DIA ACK" 0x00
+38
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x07 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-419 2 DI/24 V DC DIA" 0x10
+39
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x05 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "*750-419 2 DI/24 V DC DIA" 0x00
+40
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x05 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-422 4 DI/24 V DC" 0x10
+41
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-422 4 DI/24 V DC" 0x00
+42
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-423 4 DI/24 V AC/DC/50ms" 0x10
+43
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-423 4 DI/24 V AC/DC/50ms" 0x00
+44
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-424 4 DI/24 V DC" 0x10
+45
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-424 4 DI/24 V DC" 0x00
+46
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-425 2 DI/24 V DC NAMUR" 0x10
+47
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x05 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "*750-425 2 DI/24 V DC NAMUR" 0x00
+48
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x05 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-427 2 DI/110 V DC" 0x10
+49
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-427 2 DI/110 V DC" 0x00
+50
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-430  8 DI/24 V DC/3.0 ms" 0x10
+51
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x23 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-431  8 DI/24 V DC/0.2 ms" 0x10
+52
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x23 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-435  1 DI/24 V DC EEx i" 0x10
+53
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-435  1 DI/24 V DC EEx i" 0x00
+54
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-4dd 2 DI" 0x10
+55
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-4dd 2 DI" 0x00
+56
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-4dd 2 DI / DIA" 0x10
+57
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x05 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "*750-4dd 2 DI / DIA" 0x00
+58
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x05 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-4dd 4 DI" 0x10
+59
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-4dd 4 DI" 0x00
+60
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-4dd 8 DI" 0x10
+61
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x23 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-452  2 AI/0-20 mA/diff." 0x51
+62
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x42 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-453  4 AI/0-20 mA/SE" 0x51
+63
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x43 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(0) = 22
+Ext_User_Prm_Data_Ref(0) = 23
+EndModule
+Module = "750-454  2 AI/4-20 mA/diff." 0x51
+64
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x44 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-455  4 AI/4-20 mA/SE" 0x53
+65
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x45 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(0) = 22
+Ext_User_Prm_Data_Ref(0) = 23
+EndModule
+Module = "750-456  2 AI/+/-10 V/diff." 0x51
+66
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x46 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-457  4 AI/+/-10 V/SE" 0x53
+67
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x47 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(0) = 22
+Ext_User_Prm_Data_Ref(0) = 23
+EndModule
+Module = "750-459  4 AI/0-10 V/SE" 0x53
+68
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x49 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(0) = 22
+Ext_User_Prm_Data_Ref(0) = 23
+EndModule
+Module = "750-460  4 AI/RTD" 0x53
+69
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x4A , 0x01 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(0) = 22
+Ext_User_Prm_Data_Ref(0) = 23
+EndModule
+Module = "750-461  2 AI/RTD" 0x51
+70
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x4B , 0x01 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-462  2 AI/TC" 0x51
+71
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x4C , 0x01 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-463  4 AI/TC" 0x53
+72
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x4D , 0x01 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(0) = 22
+Ext_User_Prm_Data_Ref(0) = 23
+EndModule
+Module = "750-465  2 AI/0-20 mA/SE" 0x51
+73
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x4F , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-466  2 AI/4-20 mA/SE" 0x51
+74
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x50 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-467  2 AI/0-10 V/SE" 0x51
+75
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x51 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-468  4 AI/0-10 V/SE" 0x53
+76
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x52 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(0) = 22
+Ext_User_Prm_Data_Ref(0) = 23
+EndModule
+Module = "750-469  2 AI/TC/OCM" 0x51
+77
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x53 , 0x01 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-472  2 AI/0-20 mA/OVLP" 0x51
+78
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x56 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-474  2 AI/4-20 mA/OVLP" 0x51
+79
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x58 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-475  2 AI/0-1 A AC/DC" 0x51
+80
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x59 , 0x01 , 0x07
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-476  2 AI/+/-10 V" 0x51
+81
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x5A , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-478  2 AI/0-10 V" 0x51
+82
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x5C , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-479  2 AI/+/-10 V" 0x51
+83
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x5D , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-480  2 AI/0-20 mA" 0x51
+84
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x5E , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-485  2 AI/4-20 mA EEx i" 0x51
+85
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x63 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-491 1 AI/DMS-Bridge" 0x51
+86
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x69 , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-492  2 AI/4-20 mA" 0x51
+87
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x6A , 0x11 , 0x06
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-4aa  2 AI" 0x51
+88
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x40 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(1) = 12
+EndModule
+Module = "750-4aa  4 AI" 0x53
+89
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x40 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(0) = 22
+Ext_User_Prm_Data_Ref(0) = 23
+Ext_User_Prm_Data_Ref(1) = 12
+EndModule
+Module = "750-501  2 DO/24 V DC/0.5 A" 0x20
+90
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "*750-501  2 DO/24 V DC/0.5 A" 0x00
+91
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "750-502  2 DO/24 V DC/2.0 A" 0x20
+92
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "*750-502  2 DO/24 V DC/2.0 A" 0x00
+93
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "750-504  4 DO/24 V DC/0.5 A" 0x20
+94
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+EndModule
+Module = "*750-504  4 DO/24 V DC/0.5 A" 0x00
+95
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+EndModule
+Module = "750-506  2 DO/24 V DC/0.5 A DIA" 0x20
+96
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "*750-506  2 DO/24 V DC/0.5 A DIA" 0x00
+97
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "750-507  2 DO/24 V DC/2.0 A DIA" 0x20
+98
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "*750-507  2 DO/24 V DC/2.0 A DIA" 0x00
+99
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "750-509  2 DO/230 V AC/0.3 A" 0x20
+100
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 24
+Ext_User_Prm_Data_Ref(0) = 25
+EndModule
+Module = "*750-509  2 DO/230 V AC/0.3 A" 0x00
+101
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 24
+Ext_User_Prm_Data_Ref(0) = 25
+EndModule
+Module = "750-511  2 DO 24 V DC/PWM" 0xF2
+102
+Ext_Module_Prm_Data_Len = 8
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xBD , 0x00 , 0x04 , 0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(4) = 32
+Ext_User_Prm_Data_Ref(6) = 33
+EndModule
+Module = "750-512  2 DO Relay/250 V AC" 0x20
+103
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "*750-512  2 DO Relay/250 V AC" 0x00
+104
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "750-513  2 DO Relay/250 V AC" 0x20
+105
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "*750-513  2 DO Relay/250 V AC" 0x00
+106
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "750-514  2 DO Relay/125 V AC" 0x20
+107
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "*750-514  2 DO Relay/125 V AC" 0x00
+108
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "750-516  4 DO/24 V DC/0.5 A" 0x20
+109
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+EndModule
+Module = "*750-516  4 DO/24 V DC/0.5 A" 0x00
+110
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+EndModule
+Module = "750-517  2 DO Relay/230 V AC" 0x20
+111
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "*750-517  2 DO Relay/230 V AC" 0x00
+112
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "750-519  4 DO/5 V DC/20 mA" 0x20
+113
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+EndModule
+Module = "*750-519  4 DO/5 V DC/20 mA" 0x00
+114
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+EndModule
+Module = "750-522  2 DO/230V AC/0.5 A DIA" 0x20
+115
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "*750-522  2 DO/230V AC/0.5 A DIA" 0x00
+116
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "750-523  1 DO/230V AC/16 A DIA" 0x20
+117
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(2) = 24
+EndModule
+Module = "*750-523  1 DO/230V AC/16 A DIA" 0x00
+118
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(2) = 24
+EndModule
+Module = "750-530  8 DO/24 V DC/0.5 A" 0x20
+119
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x23 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+Ext_User_Prm_Data_Ref(2) = 28
+Ext_User_Prm_Data_Ref(2) = 29
+Ext_User_Prm_Data_Ref(2) = 30
+Ext_User_Prm_Data_Ref(2) = 31
+EndModule
+Module = "750-535  2 DO/24V DC/0.5A EEx i" 0x20
+120
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "*750-535  2 DO/24V DC/0.5A EEx i" 0x00
+121
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "750-5dd 2 DO" 0x20
+122
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-5dd 2 DO" 0x00
+123
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-5dd 2 DO / 1 DIA" 0x20
+124
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "*750-5dd 2 DO / 1 DIA" 0x00
+125
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-5dd 2 DO / 2 DIA" 0x20
+126
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "*750-5dd 2 DO / 2 DIA" 0x00
+127
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x03 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+Ext_User_Prm_Data_Ref(0) = 21
+EndModule
+Module = "750-5dd 4 DO" 0x20
+128
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+EndModule
+Module = "*750-5dd 4 DO" 0x00
+129
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+EndModule
+Module = "750-5dd 8 DO" 0x20
+130
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x23 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+Ext_User_Prm_Data_Ref(2) = 28
+Ext_User_Prm_Data_Ref(2) = 29
+Ext_User_Prm_Data_Ref(2) = 30
+Ext_User_Prm_Data_Ref(2) = 31
+EndModule
+Module = "Buerkert 8644 monost. 2 DO" 0x20
+131
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "*Buerkert 8644 monost. 2 DO" 0x00
+132
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+EndModule
+Module = "Buerkert 8644 bistab. 4 DO" 0x20
+133
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x02 , 0x01
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+EndModule
+Module = "*Buerkert 8644 bistab. 4 DO" 0x00
+134
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x21 , 0x02 , 0x01
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+EndModule
+Module = "Buerkert 8644 monost. 8 DO" 0x20
+135
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x23 , 0x02 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 24
+Ext_User_Prm_Data_Ref(2) = 25
+Ext_User_Prm_Data_Ref(2) = 26
+Ext_User_Prm_Data_Ref(2) = 27
+Ext_User_Prm_Data_Ref(2) = 28
+Ext_User_Prm_Data_Ref(2) = 29
+Ext_User_Prm_Data_Ref(2) = 30
+Ext_User_Prm_Data_Ref(2) = 31
+EndModule
+Module = "750-550  2 AO/0-10 V" 0x61
+136
+Ext_Module_Prm_Data_Len = 6
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x80 , 0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 32
+Ext_User_Prm_Data_Ref(4) = 33
+EndModule
+Module = "750-551  4 AO/0-10 V" 0x63
+137
+Ext_Module_Prm_Data_Len = 10
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x81 , 0x00 , 0x00 , 0x00 , 0x00 ,\
+                                           0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 32
+Ext_User_Prm_Data_Ref(4) = 33
+Ext_User_Prm_Data_Ref(6) = 34
+Ext_User_Prm_Data_Ref(8) = 35
+EndModule
+Module = "750-552  2 AO/0-20 mA" 0x61
+138
+Ext_Module_Prm_Data_Len = 6
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x82 , 0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 32
+Ext_User_Prm_Data_Ref(4) = 33
+EndModule
+Module = "750-553  4 AO/0-20 mA" 0x63
+139
+Ext_Module_Prm_Data_Len = 10
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x83 , 0x00 , 0x00 , 0x00 , 0x00 ,\
+                                           0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 32
+Ext_User_Prm_Data_Ref(4) = 33
+Ext_User_Prm_Data_Ref(6) = 34
+Ext_User_Prm_Data_Ref(8) = 35
+EndModule
+Module = "750-554  2 AO/4-20 mA" 0x61
+140
+Ext_Module_Prm_Data_Len = 6
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x84 , 0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 32
+Ext_User_Prm_Data_Ref(4) = 33
+EndModule
+Module = "750-555  4 AO/4-20 mA" 0x63
+141
+Ext_Module_Prm_Data_Len = 10
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x85 , 0x00 , 0x00 , 0x00 , 0x00 ,\
+                                           0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 32
+Ext_User_Prm_Data_Ref(4) = 33
+Ext_User_Prm_Data_Ref(6) = 34
+Ext_User_Prm_Data_Ref(8) = 35
+EndModule
+Module = "750-556  2 AO/+/-10 V" 0x61
+142
+Ext_Module_Prm_Data_Len = 6
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x86 , 0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 36
+Ext_User_Prm_Data_Ref(4) = 37
+EndModule
+Module = "750-557  4 AO/+/-10 V" 0x63
+143
+Ext_Module_Prm_Data_Len = 10
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x87 , 0x00 , 0x00 , 0x00 , 0x00 ,\
+                                           0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 36
+Ext_User_Prm_Data_Ref(4) = 37
+Ext_User_Prm_Data_Ref(6) = 38
+Ext_User_Prm_Data_Ref(8) = 39
+EndModule
+Module = "750-559  4 AO/0-10 V" 0x63
+144
+Ext_Module_Prm_Data_Len = 10
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x89 , 0x00 , 0x00 , 0x00 , 0x00 ,\
+                                           0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 32
+Ext_User_Prm_Data_Ref(4) = 33
+Ext_User_Prm_Data_Ref(6) = 34
+Ext_User_Prm_Data_Ref(8) = 35
+EndModule
+Module = "750-585  2 AO/4-20 mA EEx i" 0x61
+145
+Ext_Module_Prm_Data_Len = 6
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xA3 , 0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(2) = 32
+Ext_User_Prm_Data_Ref(4) = 33
+EndModule
+Module = "750-5aa  2 AO" 0x61
+146
+Ext_Module_Prm_Data_Len = 6
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x80 , 0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(1) = 13
+Ext_User_Prm_Data_Ref(2) = 36
+Ext_User_Prm_Data_Ref(4) = 37
+EndModule
+Module = "750-5aa  4 AO" 0x63
+147
+Ext_Module_Prm_Data_Len = 10
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x80 , 0x00 , 0x00 , 0x00 , 0x00 ,\
+                                           0x00 , 0x00 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(1) = 13
+Ext_User_Prm_Data_Ref(2) = 36
+Ext_User_Prm_Data_Ref(4) = 37
+Ext_User_Prm_Data_Ref(6) = 38
+Ext_User_Prm_Data_Ref(8) = 39
+EndModule
+Module = "750-610  Supply 24 V DC/DIA" 0x00
+148
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 40
+Ext_User_Prm_Data_Ref(0) = 41
+EndModule
+Module = "750-610  Dia. to PI" 0x10
+149
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-610  Dia. to PI" 0x00
+150
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-611  Supply 230 V AC/DIA" 0x00
+151
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 40
+Ext_User_Prm_Data_Ref(0) = 41
+EndModule
+Module = "750-611  Dia. to PI" 0x10
+152
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "*750-611  Dia. to PI" 0x00
+153
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x01 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-630  SSI-Interface" 0x93
+154
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xC0 , 0x3A , 0x18
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+EndModule
+Module = "750-631  Encoder-Interface" 0xB5
+155
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xC1 , 0x22 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+EndModule
+Module = "750-634  Encoder-Interface" 0xB5
+156
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xC4 , 0x22 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+EndModule
+Module = "750-635  Dig. Impuls-Interface" 0xB3
+157
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xC5 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+EndModule
+Module = "750-637  Encoder-Interface" 0xF2
+158
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xC7 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+EndModule
+Module = "750-638  U/D-Counter" 0xF2
+159
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xC8 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+EndModule
+Module = "750-650  RS232C-Intf. 5 Byte" 0xB5
+160
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xD4 , 0x36 , 0x03
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+EndModule
+Module = "750-650  RS232C-Intf. 3 Byte" 0xB3
+161
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xD4 , 0x36 , 0x03
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+EndModule
+Module = "750-651  TTY-Interface 5 Byte" 0xB5
+162
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xD5 , 0x36 , 0x02
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+EndModule
+Module = "750-651  TTY-Interface 3 Byte" 0xB3
+163
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xD5 , 0x36 , 0x02
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+EndModule
+Module = "750-653  RS485-Interface 5 Byte" 0xB5
+164
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xD7 , 0x36 , 0x03
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+EndModule
+Module = "750-653  RS485-Interface 3 Byte" 0xB3
+165
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xD7 , 0x36 , 0x03
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+EndModule
+Module = "750-654  Data Exchange Module" 0xF1
+166
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0xD8 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(0) = 20
+EndModule
+Module = "750-6aa  SF" 0xF2
+167
+Ext_Module_Prm_Data_Len = 4
+Ext_User_Prm_Data_Const(0) = 0x20 , 0x80 , 0x00 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(1) = 14
+EndModule
+Module = "PFC 750-6aa  SF" 0x00
+168
+Ext_Module_Prm_Data_Len = 3
+Ext_User_Prm_Data_Const(0) = 0x60 , 0x80 , 0x00
+Ext_User_Prm_Data_Ref(0) = 10
+Ext_User_Prm_Data_Ref(1) = 14
+EndModule
+SlotDefinition
+Slot(1) = "Process Data Interface" 2 1-3
+EndSlotDefinition

@@ -8,12 +8,10 @@ def start_pyprofibus():
 	print("Starting pyprofibus...")
 
 	# Start dummy example that uses virtual bus hardware.
-	# import example_dummy_oneslave
-	# example_dummy_oneslave.main(confdir="examples", watchdog=watchdog) # Run main loop
-	# return
-	import examples_wago
-	examples_wago.main(confdir="examples", watchdog=watchdog) # Run main loop
+	import example_dummy_oneslave
+	example_dummy_oneslave.main(confdir="examples", watchdog=watchdog) # Run main loop
 	return
+
 	# Start the S7-312-2DP example.
 	#import example_s7_315_2dp
 	#example_s7_315_2dp.main(confdir="examples", watchdog=watchdog) # Run main loop
